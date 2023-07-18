@@ -114,4 +114,12 @@ Caso de prueba 5: solicitud a las 9:00 p.m. del día 16 para el producto 35455 d
 }
 ```
 
+Caso de prueba 6: solicitud a las 9:00 p.m. del día 16 para el producto 35455 de la marca ZARA
+```
+{
+  "applicationDate": "2020-06-16T21:00:00",
+  "productId": 35455,
+  "brandName": "ZARA"
+}
+```
 ¡Gracias por revisar mi challenge resuelto! Si tienes alguna pregunta o necesitas más información, no dudes en hacerla. ¡Buena semana! 🚀
