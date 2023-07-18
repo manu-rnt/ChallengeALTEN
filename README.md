@@ -1,8 +1,8 @@
-# ChallengeALTEN
+## Challenge ALTEN
 
-Challenge realizado para la empresa ALTEN Spain para el cliente INDATEX S.A (ZARA).
+Este desafío consiste en construir una aplicación/servicio en SpringBoot que proporcione un punto final REST. La aplicación se encargará de manejar una tabla de precios en una base de datos de comercio electrónico. La tabla refleja el precio final y la tarifa que se aplica a un producto de cadena en un período de tiempo determinado. La propiedad *PRIORITY* se utilizará como desambiguador de la aplicación de precios, lo que significa que si dos tarifas coinciden en un rango de fechas, se aplicará la que tenga la prioridad más alta (valor numérico más alto).
 
-## Especificaciones del proyecto
+### Especificaciones del proyecto
 
 - Java 1.8
 - SpringBoot 2.7.5
@@ -11,21 +11,20 @@ Challenge realizado para la empresa ALTEN Spain para el cliente INDATEX S.A (ZAR
 - H2
 - Swagger 1.6.12 (springdoc-openapi)
 
-## Clonar el repositorio
+### Clonar el repositorio
 
 Para clonar el repositorio, puedes utilizar alguno de los siguientes comandos en base a tu preferencia:
 
-### SSH
+SSH:
 ```
 git clone git@github.com:manu-rnt/ChallengeALTEN.git
 ```
-
-### HTTP
+HTTP:
 ```
 git clone https://github.com/manu-rnt/ChallengeALTEN.git
 ```
 
-## Importar el proyecto
+### Importar el proyecto
 
 Una vez clonado el repositorio, debes abrir Eclipse o tu IDE favorito para manejar Java e importar el proyecto.
 
@@ -37,21 +36,21 @@ Si estás utilizando Eclipse, puedes importar el proyecto siguiendo estos pasos:
 4. Navega hasta la ubicación del proyecto clonado y selecciona la carpeta raíz del proyecto.
 5. Haz clic en "Finish".
 
-## Realizar el build
+### Realizar el build
 
 Una vez importado el proyecto, debes realizar el build para instalar las dependencias.
 
-Haz clic derecho en el proyecto "zara" y luego selecciona "Run As" -> "Maven build". Esto instalará las dependencias configuradas en el archivo POM.xml.
+Haz clic derecho en el proyecto "zara" y luego selecciona "Run As" -> "Maven build". Esto instalará las dependencias configuradas en el archivo `pom.xml`.
 
-## Ejecutar el proyecto
+### Ejecutar el proyecto
 
-Una vez realizado el build, debes ejecutar el proyecto. Puedes hacerlo haciendo clic derecho en el archivo ZaraApplication.java ubicado en la ruta `...zara\src\main\java\com\zara\ZaraApplication.java`.
+Una vez realizado el build, debes ejecutar el proyecto. Puedes hacerlo haciendo clic derecho en el archivo `ZaraApplication.java` ubicado en la ruta `...zara/src/main/java/com/zara/ZaraApplication.java`.
 
 Selecciona "Run As" -> "Java Application".
 
-El proyecto se levantará por defecto en el puerto 8081. Si deseas modificar el puerto por defecto, debes hacerlo desde la carpeta `...zara\src\main\resources` ingresando al archivo `application.properties` y cambiando la propiedad `server.port`.
+El proyecto se levantará por defecto en el puerto 8081. Si deseas modificar el puerto por defecto, debes hacerlo desde la carpeta `...zara/src/main/resources` ingresando al archivo `application.properties` y cambiando la propiedad `server.port`.
 
-## Acceder a la base de datos H2
+### Acceder a la base de datos H2
 
 Si deseas ver las tablas en tiempo real, puedes acceder a [http://localhost:8081/h2-console/](http://localhost:8081/h2-console/) y completar los siguientes datos:
 
@@ -60,22 +59,22 @@ Si deseas ver las tablas en tiempo real, puedes acceder a [http://localhost:8081
 - User Name: `sa`
 - Password: (dejar en blanco)
 
-## Acceder a Swagger
+### Acceder a Swagger
 
 Para realizar las pruebas correspondientes, puedes acceder a Swagger en [http://localhost:8081/swagger-ui/index.html](http://localhost:8081/swagger-ui/index.html).
 
-Ya existen 4 objetos agregados de forma predeterminada para realizar las pruebas correspondientes
+Ya existen 4 objetos agregados de forma predeterminada para realizar las pruebas correspondientes:
 
 - Utilizando el método GET de `/prices`, podrás obtener todos los objetos agregados de forma predeterminada.
 - Utilizando el método POST de `/prices`, podrás agregar nuevos objetos.
 - Utilizando el método GET de `/brand`, podrás ver las marcas ingresadas por defecto en la base de datos H2.
 
-## Casos de prueba para el método POST de `/filter`
+### Casos de prueba para el método POST de `/filter`
 
 `/filter` es un controlador realizado para filtrar por 3 datos. El parámetro `applicationDate` corresponde a la columna "START_DATE" en la tabla PRICES.
 
-### Caso de prueba 1: solicitud a las 10:00 a.m. del día 14 para el producto 35455 de la marca 1 (XYZ)
-```json
+Caso de prueba 1: solicitud a las 10:00 a.m. del día 14 para el producto 35455 de la marca 1 (XYZ)
+```
 {
   "applicationDate": "2020-06-14T10:00:00",
   "productId": 35455,
@@ -83,8 +82,8 @@ Ya existen 4 objetos agregados de forma predeterminada para realizar las pruebas
 }
 ```
 
-### Caso de prueba 2: solicitud a las 4:00 p.m. del día 14 para el producto 35455 de la marca 1 (XYZ)
-```json
+Caso de prueba 2: solicitud a las 4:00 p.m. del día 14 para el producto 35455 de la marca 1 (XYZ)
+```
 {
   "applicationDate": "2020-06-14T16:00:00",
   "productId": 35455,
@@ -92,8 +91,8 @@ Ya existen 4 objetos agregados de forma predeterminada para realizar las pruebas
 }
 ```
 
-### Caso de prueba 3: solicitud a las 9:00 p.m. del día 14 para el producto 35455 de la marca 1 (XYZ)
-```json
+Caso de prueba 3: solicitud a las 9:00 p.m. del día 14 para el producto 35455 de la marca 1 (XYZ)
+```
 {
   "applicationDate": "2020-06-14T21:00:00",
   "productId": 35455,
@@ -101,8 +100,8 @@ Ya existen 4 objetos agregados de forma predeterminada para realizar las pruebas
 }
 ```
 
-### Caso de prueba 4: solicitud a las 10:00 a.m. del día 15 para el producto 35455 de la marca 1 (XYZ)
-```json
+Caso de prueba 4: solicitud a las 10:00 a.m. del día 15 para el producto 35455 de la marca 1 (XYZ)
+```
 {
   "applicationDate": "2020-06-15T10:00:00",
   "productId": 35455,
@@ -110,10 +109,8 @@ Ya existen 4 objetos agregados de forma predeterminada para realizar las pruebas
 }
 ```
 
-### Caso de prueba 5: solicitud a las 9:00 p.m. del día 16 para el producto 35455 de la marca 1 (XYZ)
-```json
-
-
+Caso de prueba 5: solicitud a las 9:00 p.m. del día 16 para el producto 35455 de la marca 1 (XYZ)
+```
 {
   "applicationDate": "2020-06-16T21:00:00",
   "productId": 35455,
@@ -121,4 +118,4 @@ Ya existen 4 objetos agregados de forma predeterminada para realizar las pruebas
 }
 ```
 
-¡Gracias por revisar mi challenge resuelto! Si tienes alguna pregunta o necesitas más información, no dudes en hacerla. ¡Buena semana! :rocket:
+¡Gracias por revisar mi challenge resuelto! Si tienes alguna pregunta o necesitas más información, no dudes en hacerla. ¡Buena semana! 🚀
