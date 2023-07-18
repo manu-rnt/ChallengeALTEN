@@ -25,6 +25,8 @@ git clone git@github.com:manu-rnt/ChallengeALTEN.git
 git clone https://github.com/manu-rnt/ChallengeALTEN.git
 ```
 
+## Importar el proyecto
+
 Una vez clonado el repositorio, debes abrir Eclipse o tu IDE favorito para manejar Java e importar el proyecto.
 
 Si estás utilizando Eclipse, puedes importar el proyecto siguiendo estos pasos:
@@ -35,62 +37,21 @@ Si estás utilizando Eclipse, puedes importar el proyecto siguiendo estos pasos:
 4. Navega hasta la ubicación del proyecto clonado y selecciona la carpeta raíz del proyecto.
 5. Haz clic en "Finish".
 
-Una vez importado el proyecto, debes realizar el build.
+## Realizar el build
+
+Una vez importado el proyecto, debes realizar el build para instalar las dependencias.
 
 Haz clic derecho en el proyecto "zara" y luego selecciona "Run As" -> "Maven build". Esto instalará las dependencias configuradas en el archivo POM.xml.
 
-Se agregaron por defecto 4 objetos a la base de datos H2:
+## Ejecutar el proyecto
 
-```json
-[
-  {
-    "id": 1,
-    "brandId": 1,
-    "startDate": "2020-06-14T00:00:00",
-    "endDate": "2020-12-31T23:59:59",
-    "priceList": 1,
-    "productId": 35455,
-    "priority": 0,
-    "price": 35.5,
-    "currency": "EUR"
-  },
-  {
-    "id": 2,
-    "brandId": 1,
-    "startDate": "2020-06-14T15:00:00",
-    "endDate": "2020-06-14T18:30:00",
-    "priceList": 2,
-    "productId": 35455,
-    "priority": 1,
-    "price": 25.45,
-    "currency": "EUR"
-  },
-  {
-    "id": 3,
-    "brandId": 1,
-    "startDate": "2020-06-15T00:00:00",
-    "endDate": "2020-06-15T11:00:00",
-    "priceList": 3,
-    "productId": 35455,
-    "priority": 1,
-    "price": 30.5,
-    "currency": "EUR"
-  },
-  {
-    "id": 4,
-    "brandId": 1,
-    "startDate": "2020-06-15T16:00:00",
-    "endDate": "2020-12-31T23:59:59",
-    "priceList": 4,
-    "productId": 35455,
-    "priority": 1,
-    "price": 38.95,
-    "currency": "EUR"
-  }
-]
-```
+Una vez realizado el build, debes ejecutar el proyecto. Puedes hacerlo haciendo clic derecho en el archivo ZaraApplication.java ubicado en la ruta `...zara\src\main\java\com\zara\ZaraApplication.java`.
 
-Estos objetos ya fueron ingresados desde el archivo `data.sql`.
+Selecciona "Run As" -> "Java Application".
+
+El proyecto se levantará por defecto en el puerto 8081. Si deseas modificar el puerto por defecto, debes hacerlo desde la carpeta `...zara\src\main\resources` ingresando al archivo `application.properties` y cambiando la propiedad `server.port`.
+
+## Acceder a la base de datos H2
 
 Si deseas ver las tablas en tiempo real, puedes acceder a [http://localhost:8081/h2-console/](http://localhost:8081/h2-console/) y completar los siguientes datos:
 
@@ -99,13 +60,15 @@ Si deseas ver las tablas en tiempo real, puedes acceder a [http://localhost:8081
 - User Name: `sa`
 - Password: (dejar en blanco)
 
+## Acceder a Swagger
+
 Para realizar las pruebas correspondientes, puedes acceder a Swagger en [http://localhost:8081/swagger-ui/index.html](http://localhost:8081/swagger-ui/index.html).
 
-Utilizando el método GET de `/prices`, podrás obtener todos los objetos agregados de forma predeterminada.
+Ya existen 4 objetos agregados de forma predeterminada para realizar las pruebas correspondientes
 
-Utilizando el método POST de `/prices`, podrás agregar nuevos objetos.
-
-Además, utilizando el método GET de `/brand`, podrás ver las marcas ingresadas por defecto en la base de datos H2.
+- Utilizando el método GET de `/prices`, podrás obtener todos los objetos agregados de forma predeterminada.
+- Utilizando el método POST de `/prices`, podrás agregar nuevos objetos.
+- Utilizando el método GET de `/brand`, podrás ver las marcas ingresadas por defecto en la base de datos H2.
 
 ## Casos de prueba para el método POST de `/filter`
 
@@ -129,9 +92,7 @@ Además, utilizando el método GET de `/brand`, podrás ver las marcas ingresada
 }
 ```
 
-### Caso de prueba 3: solicitud a las 9:00 p.m. del día 14 para el
-
- producto 35455 de la marca 1 (XYZ)
+### Caso de prueba 3: solicitud a las 9:00 p.m. del día 14 para el producto 35455 de la marca 1 (XYZ)
 ```json
 {
   "applicationDate": "2020-06-14T21:00:00",
@@ -151,6 +112,8 @@ Además, utilizando el método GET de `/brand`, podrás ver las marcas ingresada
 
 ### Caso de prueba 5: solicitud a las 9:00 p.m. del día 16 para el producto 35455 de la marca 1 (XYZ)
 ```json
+
+
 {
   "applicationDate": "2020-06-16T21:00:00",
   "productId": 35455,
@@ -158,4 +121,4 @@ Además, utilizando el método GET de `/brand`, podrás ver las marcas ingresada
 }
 ```
 
-¡Gracias por revisar mi challenge resuelto! Si tienes alguna pregunta o necesitas más información, no dudes en hacerla. ¡Buena suerte! :rocket:
+¡Gracias por revisar mi challenge resuelto! Si tienes alguna pregunta o necesitas más información, no dudes en hacerla. ¡Buena semana! :rocket:
