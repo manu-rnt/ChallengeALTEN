@@ -13,12 +13,8 @@ Este desafío consiste en construir una aplicación/servicio en SpringBoot que p
 
 ### Clonar el repositorio
 
-Para clonar el repositorio, puedes utilizar alguno de los siguientes comandos en base a tu preferencia:
+Para clonar el repositorio, debera utilizar el sigueinte comando:
 
-SSH:
-```
-git clone git@github.com:manu-rnt/ChallengeALTEN.git
-```
 HTTP:
 ```
 git clone https://github.com/manu-rnt/ChallengeALTEN.git
