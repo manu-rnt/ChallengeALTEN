@@ -1,7 +1,8 @@
-## Challenge Resuelto ALTEN
+## Challenge ALTEN
 
 Este desafío consiste en construir una aplicación/servicio en SpringBoot que proporcione un punto final REST. La aplicación se encargará de manejar una tabla de precios en una base de datos de comercio electrónico. La tabla refleja el precio final y la tarifa que se aplica a un producto de cadena en un período de tiempo determinado. La propiedad *PRIORITY* se utilizará como desambiguador de la aplicación de precios, lo que significa que si dos tarifas coinciden en un rango de fechas, se aplicará la que tenga la prioridad más alta (valor numérico más alto).
 
+### Challenge Resuelto
 ### Especificaciones del proyecto
 
 - Java 1.8
