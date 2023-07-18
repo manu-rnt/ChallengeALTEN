@@ -1,0 +1,17 @@
+C:\Users\manue\springboot\zara\src\main\java\com\zara\dtos\PriceFilterRequest.java
+C:\Users\manue\springboot\zara\src\main\java\com\zara\exception\PriceNotFoundException.java
+C:\Users\manue\springboot\zara\src\main\java\com\zara\controller\BrandController.java
+C:\Users\manue\springboot\zara\src\main\java\com\zara\exception\CustomExceptionHandler.java
+C:\Users\manue\springboot\zara\src\main\java\com\zara\controller\FilterController.java
+C:\Users\manue\springboot\zara\src\main\java\com\zara\controller\PricesController.java
+C:\Users\manue\springboot\zara\src\main\java\com\zara\service\PriceFilterService.java
+C:\Users\manue\springboot\zara\src\main\java\com\zara\entities\Brand.java
+C:\Users\manue\springboot\zara\src\main\java\com\zara\exception\ApiError.java
+C:\Users\manue\springboot\zara\src\main\java\com\zara\exception\BrandNotFoundException.java
+C:\Users\manue\springboot\zara\src\main\java\com\zara\service\Impl\PriceFilterServiceImpl.java
+C:\Users\manue\springboot\zara\src\main\java\com\zara\ZaraApplication.java
+C:\Users\manue\springboot\zara\src\main\java\com\zara\entities\Prices.java
+C:\Users\manue\springboot\zara\src\main\java\com\zara\dtos\PriceFilterResponse.java
+C:\Users\manue\springboot\zara\src\main\java\com\zara\repository\PricesRepository.java
+C:\Users\manue\springboot\zara\src\main\java\com\zara\exception\ProductNotFoundException.java
+C:\Users\manue\springboot\zara\src\main\java\com\zara\repository\BrandRepository.java
